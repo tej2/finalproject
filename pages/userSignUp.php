@@ -10,15 +10,6 @@
 
   <body>
 
-    <div class="page login-page">
-
-      <div class="container d-flex align-items-center">
-
-        <div class="form-holder has-shadow">
-
-          <div class="row">
-
-                    <h1>Todo Tasks Process</h1>
                     <h3>Registration</h3>
 
                   </div>
