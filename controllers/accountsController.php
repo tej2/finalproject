@@ -1,6 +1,6 @@
 <?php
 
-class accountController extends http\controller
+class accountsController extends http\controller
 
 {
     public static function show()
