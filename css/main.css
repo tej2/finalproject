@@ -1,1 +1,91 @@
-k
+body
+{
+font-family: verdana;
+font-size:12px;
+}
+header {
+background-color:#white;
+}
+	
+header .row {
+padding: 10px 25px 25px 10px;
+font-weight:italics;
+font-size: 1em;
+}
+
+
+nav { 
+	 margin-top:25px;
+	float:left;
+} 
+li {
+    display: inline;
+    margin-left: 50px;
+	
+}
+.jumbotron {
+	background-image:url('https://static.pexels.com/photos/251603/pexels-photo-251603.jpeg');
+		background-size: cover;	
+}
+.jumbotron .title {
+	color:#white;
+	font-weight:bold;
+	font-size:4em;
+	}
+.jumbotron .subtitle {
+	color:#blue;
+	font-size:2em;
+	}
+.photocredit {
+	color:blue;
+	font-size:0.75em;
+	}
+
+.message {
+    color: #black;
+	font-weight: bold;
+}
+/* Table Styles */
+
+td, th {	padding: 6px; }
+
+tr {
+    font-size: 12px;
+	border:none;
+}
+tr th { border-bottom:#ccc 1px solid;  }
+tr:nth-child(odd) {
+    background-color: #grey;
+}
+
+/*Buttons*/
+button.edit {
+    padding: 6px 12px 6px 12px;
+    background-color: pink;
+    color: #white;
+}
+
+button.edit:hover {
+    padding: 6px 12px 6px 12px;
+    background-color: #pink;
+    color: #white;
+}
+button.delete:hover {
+    background-color: darkred;
+    color: #white;
+}
+#contact {
+	padding:35px;
+	background-color:white;
+}
+footer {
+	margin-top:75px;
+	
+}
+
+div#field {
+    margin-bottom: 10px;
+}
+#updateForm input {
+    margin-bottom: 18px;
+}
