@@ -29,7 +29,7 @@
 
 
 </form>
-<h3><a href="index.php?page=accounts&action=signup">New User?</a></h3>
+<h3><a href="https://web.njit.edu/~tej2/finalproject/pages/userSignUp.php">New User?</a></h3>
 
 
 </body>
