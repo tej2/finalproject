@@ -1,5 +1,5 @@
 <?php
-class controllerfortasks extends http\controller
+class tasksController extends http\controller
 {
     public static function show()
     {
