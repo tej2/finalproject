@@ -24,7 +24,7 @@ public static function all()
     {
         self::getTemplate('register');
     }
-public static function update()
+public static function store()
 {
 $user = accounts::findUserbyEmail($_REQUEST['email']);
     if ($user == FALSE) {
