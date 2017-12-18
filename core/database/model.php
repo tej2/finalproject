@@ -1,15 +1,21 @@
 <?php
 namespace database;
+use http\controller;
 abstract class model
 {
     public function save()
     {
+        if($this->validate() == FALSE) {
+            echo 'Not validated';
+            exit;
+        }
         if ($this->id != '') {
             $sql = $this->update();
         } else {
             $sql = $this->insert();
             $INSERT = TRUE;
         }
+        echo $sql;
         $db = dbConn::getConnection();
         $statement = $db->prepare($sql);
         $array = get_object_vars($this);
@@ -35,6 +41,10 @@ abstract class model
         $valueString = ':' . implode(',:', array_flip($array));
         $sql = 'INSERT INTO ' . $tableName . ' (' . $columnString . ') VALUES (' . $valueString . ')';
         return $sql;
+    }
+ 
+    public function validate() {
+        return TRUE;
     }
     private function update()
     {
