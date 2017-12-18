@@ -33,14 +33,14 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
         $record->fname = $_POST['fname'];
         $record->lname = $_POST['lname'];
         $record->phone = $_POST['phone'];
-        $record->birthday = $_POST['bday'];
+        $record->birthday = $_POST['birthday'];
         $record->gender = $_POST['gender'];
         $record->password = $record->setPassword($_POST['password']);
         $record->save();
         header('Location: index.php?page=accounts&action=all');
     }
     else{
-        echo 'This email is already registered.';
+        echo 'Email has already been used.';
     }
 }
     public static function edit()
