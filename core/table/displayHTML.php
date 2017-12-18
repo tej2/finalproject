@@ -2,7 +2,6 @@
 namespace table;
 
 class displayHTML{
-{
     public static function genarateTableFromMultiArray($array)
     {
         if(!empty($array)) {
