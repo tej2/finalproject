@@ -3,8 +3,14 @@
 
 <html>
 <body>
-
-
+<head>
+<style>
+body {
+    background-color: lightpink;
+}
+</style>
+</head>
+<center>
 <form action="index.php?page=accounts&action=register" method="post">
     First name: <input type="text" name="fname"><br>
     Last name: <input type="text" name="lname"><br>
