@@ -29,7 +29,7 @@
 
 
 </form>
-<h3><a href="index.php?page=accounts&action=userSignUp">New User?</a></h3>
+<h3><a href="index.php?page=accounts&action=signup">New User?</a></h3>
 
 
 </body>
