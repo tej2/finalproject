@@ -9,6 +9,7 @@ abstract class collection {
         $tableName = get_called_class();
         $sql = 'SELECT * FROM ' . $tableName;
         return self::getResults($sql);
+    }
     protected static function getResults($sql, $parameters = null) {
         if (!is_array($parameters)) {
             $parameters = (array) $parameters;
