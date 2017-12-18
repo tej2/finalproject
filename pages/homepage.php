@@ -9,7 +9,7 @@
   <label for="password"><b><h1>Password:</h1></label>
 <input type="password" placeholder="Enter Password" name="password" required>
 <div id="lower">
-  <button type="submit"><b><h2>Login!</h2></button>
+  <p><button type="submit"><b><h2>Login!</h2></button>
 </div>
 </form>
 </html>
