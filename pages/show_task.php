@@ -2,7 +2,7 @@
 session_start();
 ?>
 <?php
-print table\htmlTable::generateTableForOneTodo($data);
+print table\displayTable::generateTableForOneTodo($data);
 ?>
 <html>
 <body>
