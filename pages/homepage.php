@@ -1,14 +1,12 @@
 <!doctype html>
 <html>
 <head>
-<head>
 <style>
 body {
     background-color: lightpink;
 }
 </style>
 </head>
-<body>
 <body>
 <center>
 <div id="container">       
