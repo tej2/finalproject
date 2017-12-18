@@ -50,6 +50,15 @@ class displayHTML{
         $tableGen .= '</tr></table><hr>';
         return $tableGen;
     }
+    public static function accountValues($innerArray)
+	{
+    		$Html ="<p>User Name: <strong>" . $innerArray['username'] ."</strong><br>";
+		    $Html .="<p>First Name: <strong>" . $innerArray['fname'] ."</strong><br>";
+    		$Html .="<p>Last Name: <strong>" . $innerArray['lname'] ."</strong><br>";
+		    $Html .="<p>Email: <strong>" . $innerArray['email'] ."</strong><br>";
+			return $Html;
+		
+	}
 }
 ?>
   
