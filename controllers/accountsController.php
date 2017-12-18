@@ -78,7 +78,7 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
         print_r($user);
         if ($user == FALSE) {
             echo 'user not found';
-        } else if($user->checkPassword($_POST['pass']) == TRUE) {
+        } else if($user->checkPassword($_POST['password']) == TRUE) {
                 echo 'Please login!';
                 session_start();
                 $_SESSION["userID"] = $user->id;
