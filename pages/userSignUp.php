@@ -5,7 +5,7 @@
 <body>
 
 
-<form action="index.php?page=accounts&action=signup" method="post">
+<form action="index.php?page=accounts&action=register" method="post">
     First name: <input type="text" name="fname"><br>
     Last name: <input type="text" name="lname"><br>
     Email: <input type="text" name="email"><br>
