@@ -1,10 +1,15 @@
 <?php
 session_start();
-?>
-<?php
 print table\displayHTML::generateTableForOneTodo($data);
 ?>
 <html>
+<head>
+<style>
+body {
+    background-color: lightpink;
+}
+</style>
+</head>
 <body>
 <form action="index.php?page=tasks&action=edit&id=<?php echo $data->id; ?> " method="post" id="form1" style="float:left;">
 <div class="col-lg-10"><button class="btn btn-primary text-center" type="submit" form="form1" value="edit">Edit</button></div>
