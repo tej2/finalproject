@@ -13,11 +13,11 @@ public static function all()
         $records = accounts::findAll();
         self::getTemplate('all_accounts', $records);
     }
-    public static function signup()
+    public static function register()
     {
-        self::getTemplate('User_SignUp');
+        self::getTemplate('register');
     }
-public static function register()
+public static function update()
 {
 $user = accounts::findUserbyUN($_REQUEST['email']);
     if ($user == FALSE) {
