@@ -19,7 +19,7 @@ public static function all()
     }
 public static function update()
 {
-$user = accounts::findUserbyUN($_REQUEST['email']);
+$user = accounts::findUserbyEmail($_REQUEST['email']);
     if ($user == FALSE) {
         $record = new account();
         $record->email = $_POST['email'];
@@ -32,7 +32,7 @@ $user = accounts::findUserbyUN($_REQUEST['email']);
         $record->password = $record->setPassword($_POST['password']);
         //print_r($record);
         $record->save();
-        header('Location: index.php');
+        header('Location: index.php?page=accounts&action=all');
     }
     else{
         echo 'This email is already registered.';
@@ -42,7 +42,7 @@ $user = accounts::findUserbyUN($_REQUEST['email']);
     {
         print_r($_POST);
     }
-    public static function update_profile()
+    public static function updateprofile()
     {
         $records = accounts::findOne($_REQUEST['id']);
         $record = new account();
@@ -58,7 +58,7 @@ $user = accounts::findUserbyUN($_REQUEST['email']);
         
         self::getTemplate('show_account', $record);
     }
-    public static function edit_profile()
+    public static function editprofile()
     {
         session_start();
         $record = accounts::findOne($_SESSION['userID']);
@@ -93,28 +93,4 @@ $user = accounts::findUserbyUN($_REQUEST['email']);
             echo 'Incorrect password.';
         }
     }
-     public static function login()
-    {
-     $record = new account();
-        $record = accounts::findUserbyUN($_POST['login']);
-                if ($record == FALSE) {
-            print_r("User not found");
-        } else {
-            if($record->checkPassword($_POST['psw']) == TRUE) {
-  session_start();
-                $_SESSION["userID"] = $record->id;
-                $_SESSION["userEmail"] = $record->email;
-                print_r($_SESSION);
-                header('Location: index.php?page=tasks&action=allOneUser&id='.$record->id);
-            } else {
- print_r("Wrong password.");
-            }
-        }
-    }
-    public static function logout()
-    {
-        session_destroy();
-        header('Location: index.php');
-    }
-}
-?>
+     publ
