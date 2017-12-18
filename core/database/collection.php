@@ -6,27 +6,34 @@ abstract class collection {
         return $model;
     }
     static public function findAll() {
-        $db = dbConn::getConnection();
         $tableName = get_called_class();
         $sql = 'SELECT * FROM ' . $tableName;
-        echo $sql;
-	    $statement = $db->prepare($sql);
-        $statement->execute();
+        return self::getResults($sql);
+    protected static function getResults($sql, $parameters = null) {
+        if (!is_array($parameters)) {
+            $parameters = (array) $parameters;
+        }
+        $db = dbConn::getConnection();
+        $statement = $db->prepare($sql);
+        $statement->execute($parameters);
         $class = static::$modelName;
-        $statement->setFetchMode(\PDO::FETCH_CLASS, $class);
-        $recordsSet =  $statement->fetchAll();
+        if ($statement->rowCount() > 0) {
+            $statement->setFetchMode(\PDO::FETCH_CLASS, $class);
+            $recordsSet = $statement->fetchAll();
+        } else {
+            $recordsSet = NULL;
+        }
         return $recordsSet;
     }
     static public function findOne($id) {
-        $db = dbConn::getConnection();
         $tableName = get_called_class();
-        $sql = 'SELECT * FROM ' . $tableName . ' WHERE id =' . $id;
-        $statement = $db->prepare($sql);
-        $statement->execute();
-        $class = static::$modelName;
-        $statement->setFetchMode(\PDO::FETCH_CLASS, $class);
-        $recordsSet =  $statement->fetchAll();
-        return $recordsSet[0];
+        $sql = 'SELECT * FROM ' . $tableName . ' WHERE id = ?';
+        $recordsSet = self::getResults($sql, $id);
+        if (is_null($recordsSet)) {
+            return FALSE;
+        } else {
+            return $recordsSet[0];
+        }
     }
 }
 ?>
