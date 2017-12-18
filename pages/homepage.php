@@ -14,5 +14,5 @@
 </form>
 </html>
 </body>
-<a href="index.php?page=accounts&action=register"><b>Sign Up Here!</a>
+<a href="index.php?page=accounts&action=register"><p><b>Sign Up Here!</a>
 </div>
