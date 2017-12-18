@@ -13,7 +13,7 @@
     Birthday: <input type="text" name="birthday"><br>
     Gender: <input type="text" name="gender"><br>
     Password: <input type="password" name="password"><br>
-    <input type="submit" form="register" value="Submit form" class="edit">
+    <input type="submit" value="Submit">
 </form>
 
 
