@@ -18,8 +18,7 @@
 
 
 </form>
-<h3><a href="index.php?page=accounts&action=register">New User?</a></h3>
-</center>
+<a href="index.php?page=accounts&action=register">New User?</a>
 
 </body>
 </html>
