@@ -1,11 +1,16 @@
 <!doctype html>
 
 <html>
-
+<head>
+<style>
+body {
+    background-color: lightpink;
+}
+</style>
+</head>
 <body>
 <?php print table\displayHTML::accountValues($data); 
-  ?></p>
-  			<hr>
-  			<a href="index.php?page=edit_account&action=edit"><button class="edit">Edit  Profile</button></a>
+ ?></p>
+ <hr>
 </html>
 </body>
