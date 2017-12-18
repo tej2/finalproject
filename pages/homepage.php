@@ -2,16 +2,6 @@
 
 <html>
 <body>
-
-
-<h2>
-    <?php
-    echo $data['site_name'];
-    ?> </h2>
-
-<h3><a href="index.php?page=accounts&action=all">Show All Accounts</a></h3>
-<h3><a href="index.php?page=tasks&action=all">Show All Tasks</a></h3>
-
 <form action="index.php?page=accounts&action=login" method="POST">
 
     <div class="container">
@@ -26,10 +16,9 @@
     </div>
     </div>
 
-
-
 </form>
-<h3><a href="index.php?page=accounts&action=register">New User?</a></h3>
+<form id="login-form" action="index.php?page=accounts&action=signup" method="post">
+<p><b>SIGN UP HERE!</b><p id="login" class="signup"><input type="submit" name="commit" value="Signup"></p>
 
 
 </body>
