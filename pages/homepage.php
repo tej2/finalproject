@@ -1,17 +1,18 @@
 <!doctype html>
 <html>
 <body>
+<center>
 <div id="container">       
 <form action="index.php?page=accounts&action=login" method="POST">
-<label for="username">Username:</label>
+  <label for="username"><b><h1>Username:<b></h1></label>
 <input type="text" placeholder="Enter Username" name="email" required><br><br>
-<label for="password">Password:</label>
-<input type="password" placeholder="Enter Password" name="pass" required>
+  <label for="password"><b><h1>Password:</h1></label>
+<input type="password" placeholder="Enter Password" name="password" required>
 <div id="lower">
-<button type="submit">  Login  </button>
+  <button type="submit"><b><h2>Login!</h2></button>
 </div>
 </form>
 </html>
 </body>
-<a href="index.php?page=accounts&action=register">sign up here!</a>
+<a href="index.php?page=accounts&action=register"><b>Sign Up Here!</a>
 </div>
