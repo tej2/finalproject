@@ -1,17 +1,18 @@
 <!doctype html>
 <html>
 <head>
+<head>
 <style>
-
-p.outset {border-style: outset;}
-
+body {
+    background-color: lightpink;
+}
 </style>
 </head>
+<body>
 <body>
 <center>
 <div id="container">       
 <form action="index.php?page=accounts&action=login" method="POST">
-  <p class="outset">
   <label for="username"><b><h1 style="font-family:verdana;">Username:<b></h1></label>
 <input type="text" placeholder="Enter Username" name="email" required><br><br>
   <label for="password"><b><h1 style="font-family:verdana;">Password:</h1></label>
@@ -22,6 +23,5 @@ p.outset {border-style: outset;}
 </form>
 </html>
 </body>
-   </p>
 <a href="index.php?page=accounts&action=register"><p><b><h2 style="font-family:verdana;">Sign Up Here!</h2></a>
 </div>
