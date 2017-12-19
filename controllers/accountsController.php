@@ -5,13 +5,6 @@ class accountsController extends http\controller
 {
     public static function show()
     {
-        session_start();
-        if(key_exists('userID',$_SESSION)) {
-            $userID = $_SESSION['userID'];
-        } else {
-            echo 'Log in to view tasks!';
-        }
-        $userID = $_SESSION['userID'];
         $record = accounts::findOne($userID);
         self::getTemplate('show_account', $record);
     }
@@ -37,7 +30,7 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
         $record->gender = $_POST['gender'];
         $record->password = table\registration::setPassword($_POST['password']);
         $record->save();
-        header('Location: index.php?page=accounts&action=all');
+        header('Location: index.php?page=accounts&action=all");
     }
     else{
         echo 'Email has already been used.';
@@ -58,7 +51,7 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
         $user->birthday = $_POST['birthday'];
         $user->gender = $_POST['gender'];
         $user->save();
-        header("Location: index.php?page=tasks&action=alltasks&id=".$_REQUEST['id']);
+        header("Location: index.php?page=accounts&action=all");
     }
     public static function editprofile()
     {
