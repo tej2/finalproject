@@ -80,6 +80,7 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
                 echo "wrong password!";
         }
     }
+     }
     public static function logout()
     {
         session_destroy();
