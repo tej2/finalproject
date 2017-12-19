@@ -64,28 +64,25 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
         $record->delete();
         header("Location: index.php?page=accounts&action=all");
     }
-    public static function login()
+     public static function login()
     {
-        echo "Welcome!";
-        $user = accounts::findUserbyEmail($_REQUEST['email']);
-        print_r($user);
-        if ($user == FALSE) {
-            echo 'user not found';
+        $record = new account();
+        $record = accounts::findUserbyEmail($_REQUEST['email']);
+
+        if ($record == FALSE) {
+            print_r("ser not found");
         } else {
-			$password = table\registration::checkPassword($_POST['password'], $user['password']);
-			echo $password;
-			if($pw == TRUE) {
-                echo 'login';
+            if($record->checkPassword($_POST['psw']) == TRUE) {
                 session_start();
-				$_SESSION["userID"] = $user['id'];
-				$_SESSION["FName"] =  $user['fname'];
-				header("Location: index.php?page=all_tasks&action=all");
+                $_SESSION["userID"] = $record->id;
+                $_SESSION["userEmail"] = $record->email;
+                print_r($_SESSION);
+                header('Location: index.php?page=tasks&action=allOneUser&id='.$record->id);
             } else {
-                $error = 'An error as occurred';
-		self::getTemplate('error', $error);
-               }
+                print_r("wrong password");
+            }
         }
-	}
+  	}
     public static function logout()
     {
         session_destroy();
