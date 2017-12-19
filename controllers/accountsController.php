@@ -84,7 +84,7 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
                 $_SESSION["userID"] = $user->id;
                 //forward the user to the show all todos page
                 print_r($_SESSION);
-                header("Location: index.php?page=tasks&action=alltasks&id=".$user->id);
+                header("Location: index.php?page=all_tasks&action=all");
             } else {
                 echo 'Wrong password!';
             }
