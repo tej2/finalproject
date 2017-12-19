@@ -70,9 +70,9 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
         $record = accounts::findUserbyEmail($_REQUEST['email']);
 
         if ($record == FALSE) {
-            print_r("ser not found");
+            print_r("user not found");
         } else {
-            if($record->checkPassword($_POST['psw']) == TRUE) {
+            if($record->checkPassword($_POST['password']) == TRUE) {
                 session_start();
                 $_SESSION["userID"] = $record->id;
                 $_SESSION["userEmail"] = $record->email;
