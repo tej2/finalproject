@@ -82,7 +82,9 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
 				header("Location: index.php?page=all_tasks&action=all");
             } else {
                 echo 'Wrong password!';
-            }
+               }
+        }
+	}
     public static function logout()
     {
         session_destroy();
