@@ -66,23 +66,20 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
     }
      public static function login()
     {
-        $record = new account();
-        $record = accounts::findUserbyEmail($_REQUEST['email']);
-
-        if ($record == FALSE) {
-            print_r("user not found");
-        } else {
-            if($record->checkPassword($_POST['password']) == TRUE) {
+        echo "logged in!";
+        $user = accounts::findUserbyEmail($_REQUEST['email']);
+        print_r($user);
+        if ($user == FALSE) {
+            echo 'user not found';
+          $currentuser = new account();
+            if($currentuser->checkPassword($_POST['pwd'],$user["password"])) {
                 session_start();
-                $_SESSION["userID"] = $record->id;
-                $_SESSION["userEmail"] = $record->email;
-                print_r($_SESSION);
-                header('Location: index.php?page=tasks&action=allOneUser&id='.$record->id);
+                $_SESSION["userID"] = $user["id"];
+                header("Location: index.php?page=tasks&action=getById");
             } else {
-                print_r("wrong password");
-            }
+                echo "wrong password!";
         }
-  	}
+    }
     public static function logout()
     {
         session_destroy();
