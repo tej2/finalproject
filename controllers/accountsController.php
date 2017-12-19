@@ -71,13 +71,15 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
         print_r($user);
         if ($user == FALSE) {
             echo 'user not found';
-        } else if($user->checkPassword($_POST['password']) == TRUE) {
-                echo 'Please login!';
+        } else {
+			$password = table\registration::checkPassword($_POST['password'], $user['password']);
+			echo $password;
+			if($pw == TRUE) {
+                echo 'login';
                 session_start();
-                $_SESSION["userID"] = $user->id;
-                //forward the user to the show all todos page
-                print_r($_SESSION);
-                header("Location: index.php?page=all_tasks&action=all");
+				$_SESSION["userID"] = $user['id'];
+				$_SESSION["FName"] =  $user['fname'];
+				header("Location: index.php?page=all_tasks&action=all");
             } else {
                 echo 'Wrong password!';
             }
