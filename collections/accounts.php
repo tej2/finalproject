@@ -6,7 +6,7 @@ class accounts extends \database\collection
   
     public static  function findUserbyEmail($email) {
         $tableName = get_called_class();
-        $sql = 'SELECT * FROM ' .$tableName . ' WHERE email = ?';
+        $sql = "SELECT email FROM $tableName WHERE email= '$email'";
 
         $recordsSet = self::getResults($sql, $email);
         if (is_null($recordsSet)) {
