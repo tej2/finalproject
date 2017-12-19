@@ -30,7 +30,7 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
         $record->gender = $_POST['gender'];
         $record->password = table\registration::setPassword($_POST['password']);
         $record->save();
-        header('Location: index.php?page=accounts&action=all");
+        header("Location: index.php?page=accounts&action=all");
     }
     else{
         echo 'Email has already been used.';
