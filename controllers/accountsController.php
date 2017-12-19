@@ -83,7 +83,6 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
             } else {
                 echo 'Wrong password!';
             }
-        }
     public static function logout()
     {
         session_destroy();
