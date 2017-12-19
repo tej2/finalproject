@@ -81,7 +81,8 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
 				$_SESSION["FName"] =  $user['fname'];
 				header("Location: index.php?page=all_tasks&action=all");
             } else {
-                echo 'Wrong password!';
+                $error = 'An error as occurred';
+		self::getTemplate('error', $error);
                }
         }
 	}
