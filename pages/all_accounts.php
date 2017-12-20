@@ -12,7 +12,7 @@ body {
 </head>
 
 <?php
-print table\displayHTML::genarateTableFromMultiArray($data);
+print extra\displayHTML::genarateTableFromMultiArray($data);
 ?>
 
 
