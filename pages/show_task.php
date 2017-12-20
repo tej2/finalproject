@@ -1,6 +1,6 @@
 <?php
 session_start();
-print table\displayHTML::generateTableForOneTodo($data);
+print extra\displayHTML::generateTableForOneTodo($data);
 ?>
 <html>
 <head>
