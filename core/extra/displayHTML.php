@@ -1,5 +1,5 @@
 <?php
-namespace table;
+namespace extra;
 
 class displayHTML{
     public static function genarateTableFromMultiArray($array)
