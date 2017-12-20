@@ -9,7 +9,7 @@ body {
 </style>
 </head>
 <?php
-print table\displayHTML::genarateTableFromMultiArray($data);
+print extra\displayHTML::genarateTableFromMultiArray($data);
 ?>
     
 <p><a href="index.php?page=tasks">Create A Task</a>
