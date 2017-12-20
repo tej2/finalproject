@@ -1,5 +1,5 @@
 <?php
-namespace table;
+namespace extra;
 class registration
 {
     public static function setPassword($password) {
