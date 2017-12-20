@@ -9,7 +9,7 @@ body {
 </style>
 </head>
 <body>
-<?php print table\displayHTML::accountValues($data); 
+<?php print extra\displayHTML::show($data); 
  ?></p>
  <hr>
 </html>
