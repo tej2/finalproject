@@ -28,7 +28,7 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
         $record->phone = $_POST['phone'];
         $record->birthday = $_POST['birthday'];
         $record->gender = $_POST['gender'];
-        $record->password = table\registration::setPassword($_POST['password']);
+        $record->password = extra\registration::setPassword($_POST['password']);
         $record->save();
         header("Location: index.php?page=accounts&action=all");
     }
