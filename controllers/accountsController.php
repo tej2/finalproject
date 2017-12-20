@@ -76,7 +76,7 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
             if($currentuser->checkPassword($_POST['password'],$user["password"])) {
                 session_start();
                 $_SESSION["userID"] = $user["id"];
-                header("Location: index.php?page=tasks&action=all");
+                header("Location: index.php?page=tasks&action=getPage");
             } else {
                 echo "wrong password!";
         }
