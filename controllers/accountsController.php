@@ -66,22 +66,28 @@ $user = accounts::findUserbyEmail($_REQUEST['email']);
     }
      public static function login()
     {
-        echo "logged in!";
-        $user = accounts::findUserbyEmail($_REQUEST['email']);
-        print_r($user);
-        if ($user == FALSE) {
-            echo 'user not found';
-          } else {
-          $currentuser = new account();
-            if($currentuser->checkPassword($_POST['password'],$user["password"])) {
-                session_start();
-                $_SESSION["userID"] = $user["id"];
-                header("Location: index.php?page=tasks&action=getPage");
-            } else {
-                echo "wrong password!";
+ $user = accounts::findUserbyEmail($_REQUEST['email']);
+        if($user==FALSE)
+        {
+            $error = 'user not found';
+            self::getTemplate('error', $error);
         }
+        else
+        {
+          if($user->checkPassword($_POST['password'])== TRUE)
+             {
+                session_start();
+                $_SESSION["userID"] = $user->id;
+                $_SESSION["email"] = $user->email;
+                 header("location: https://web.njit.edu/~tej2/finalproject/index.php?page=tasks&action=all");
+             }
+             else
+             {
+                 $error = 'wrong password';
+                 self::getTemplate('error', $error);
+             }
+               }
     }
-     }
     public static function logout()
     {
         session_destroy();
